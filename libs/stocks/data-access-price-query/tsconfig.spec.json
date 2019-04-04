@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc/libs/stocks/data-access-price-query",
+    "module": "commonjs",
+    "types": ["jest", "node"],
+    "allowSyntheticDefaultImports": true
+  },
+  "files": ["src/test-setup.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
+}

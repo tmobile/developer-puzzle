@@ -1,0 +1,334 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "stocks-data-access-price-query": {
+      "root": "libs/stocks/data-access-price-query",
+      "sourceRoot": "libs/stocks/data-access-price-query/src",
+      "projectType": "library",
+      "prefix": "coding-challenge",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/stocks/data-access-price-query/tsconfig.lib.json",
+              "libs/stocks/data-access-price-query/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/stocks/data-access-price-query/jest.config.js",
+            "tsConfig": "libs/stocks/data-access-price-query/tsconfig.spec.json",
+            "setupFile": "libs/stocks/data-access-price-query/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "stocks": {
+      "root": "apps/stocks/",
+      "sourceRoot": "apps/stocks/src",
+      "projectType": "application",
+      "prefix": "coding-challenge",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/stocks",
+            "index": "apps/stocks/src/index.html",
+            "main": "apps/stocks/src/main.ts",
+            "polyfills": "apps/stocks/src/polyfills.ts",
+            "tsConfig": "apps/stocks/tsconfig.app.json",
+            "assets": [
+              "apps/stocks/src/favicon.ico",
+              "apps/stocks/src/assets"
+            ],
+            "styles": [
+              "apps/stocks/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/stocks/src/environments/environment.ts",
+                  "with": "apps/stocks/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "stocks:build",
+            "proxyConfig": "apps/stocks//proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "stocks:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "stocks:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/stocks/tsconfig.app.json",
+              "apps/stocks/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/stocks/jest.config.js",
+            "tsConfig": "apps/stocks/tsconfig.spec.json",
+            "setupFile": "apps/stocks/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/stocks-server",
+            "main": "apps/stocks/src/main.server.ts",
+            "tsConfig": "apps/stocks/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/stocks/src/environments/environment.ts",
+                  "with": "apps/stocks/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "stocks-e2e": {
+      "root": "apps/stocks-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/stocks-e2e/cypress.json",
+            "tsConfig": "apps/stocks-e2e/tsconfig.e2e.json",
+            "devServerTarget": "stocks:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "stocks:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/stocks-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "stocks-feature-shell": {
+      "root": "libs/stocks/feature-shell",
+      "sourceRoot": "libs/stocks/feature-shell/src",
+      "projectType": "library",
+      "prefix": "coding-challenge",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/stocks/feature-shell/tsconfig.lib.json",
+              "libs/stocks/feature-shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/stocks/feature-shell/jest.config.js",
+            "tsConfig": "libs/stocks/feature-shell/tsconfig.spec.json",
+            "setupFile": "libs/stocks/feature-shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "shared-ui-chart": {
+      "root": "libs/shared/ui/chart",
+      "sourceRoot": "libs/shared/ui/chart/src",
+      "projectType": "library",
+      "prefix": "coding-challenge",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/chart/tsconfig.lib.json",
+              "libs/shared/ui/chart/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/chart/jest.config.js",
+            "tsConfig": "libs/shared/ui/chart/tsconfig.spec.json",
+            "setupFile": "libs/shared/ui/chart/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "stocks-data-access-app-config": {
+      "root": "libs/stocks/data-access-app-config",
+      "sourceRoot": "libs/stocks/data-access-app-config/src",
+      "projectType": "library",
+      "prefix": "coding-challenge",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/stocks/data-access-app-config/tsconfig.lib.json",
+              "libs/stocks/data-access-app-config/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/stocks/data-access-app-config/jest.config.js",
+            "tsConfig": "libs/stocks/data-access-app-config/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "stocks-api": {
+      "root": "apps/stocks-api",
+      "sourceRoot": "apps/stocks-api/src",
+      "projectType": "application",
+      "prefix": "stocks-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/stocks-api",
+            "main": "apps/stocks-api/src/main.ts",
+            "tsConfig": "apps/stocks-api/tsconfig.app.json",
+            "assets": [
+              "apps/stocks-api/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/stocks-api/src/environments/environment.ts",
+                  "with": "apps/stocks-api/src/environments/environment.prod.ts"
+                }
+              ],
+              "externalDependencies": "none"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "stocks-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/stocks-api/tsconfig.app.json",
+              "apps/stocks-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/stocks-api/jest.config.js",
+            "tsConfig": "apps/stocks-api/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {},
+  "defaultProject": "todo"
+}

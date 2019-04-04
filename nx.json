@@ -1,0 +1,41 @@
+{
+  "npmScope": "coding-challenge",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "stocks-data-access-price-query": {
+      "tags": [
+        "type:data-access",
+        "scope:stocks"
+      ]
+    },
+    "stocks": {
+      "tags": []
+    },
+    "stocks-e2e": {
+      "tags": []
+    },
+    "stocks-feature-shell": {
+      "tags": [
+        "scope:stocks",
+        "type:feature"
+      ]
+    },
+    "shared-ui-chart": {
+      "tags": []
+    },
+    "stocks-data-access-app-config": {
+      "tags": []
+    },
+    "stocks-api": {
+      "tags": [
+        "platform:server"
+      ]
+    }
+  }
+}

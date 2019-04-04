@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "module": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@coding-challenge/stocks/data-access-price-query": [
+        "libs/stocks/data-access-price-query/src/index.ts"
+      ],
+      "@coding-challenge/stocks/feature-shell": [
+        "libs/stocks/feature-shell/src/index.ts"
+      ],
+      "@coding-challenge/shared/ui/chart": [
+        "libs/shared/ui/chart/src/index.ts"
+      ],
+      "@coding-challenge/stocks/data-access-app-config": [
+        "libs/stocks/data-access-app-config/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
