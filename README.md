@@ -1,3 +1,17 @@
+# T-Mobile Coding Challenge
+
+*Important!* Do *not* submit a pull request to this repository.  You PR wil be rejected and your submission ignored.
+
+To _properly_ submit a coding challenge you must:
+
+1. fork this repository
+2. make the necessary changes
+3. push changes to your forked origin 
+4. send address of your fork to t-mobile.
+
+We will review your fork online before and during your interview.
+
+
 # Stocks coding challenge
 
 ## How to run the application
