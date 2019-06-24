@@ -31,7 +31,7 @@ A proxy has been set up in `stocks` to proxy calls to `locahost:3333` which is t
 
 ## Problem statement
 
-[Original problem statement](https://bitbucket.org/kburson3/developer-puzzles/src/3fb1841175cd567a63abfbe18c08e4d2a734c2e9/puzzles/web-api/stock-broker.md)
+[Original problem statement](https://github.com/tmobile/developer-kata/blob/master/puzzles/web-api/stock-broker.md)
 
 ### Task 1
 
