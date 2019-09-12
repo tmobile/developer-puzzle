@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PriceQueryFacade } from '@coding-challenge/stocks/data-access-price-query';
 
 @Component({
   selector: 'coding-challenge-stocks',
   templateUrl: './stocks.component.html',
-  styleUrls: ['./stocks.component.css']
+  styleUrls: ['./stocks.component.css'],
 })
-export class StocksComponent implements OnInit {
+export class StocksComponent {
   stockPickerForm: FormGroup;
   symbol: string;
-  period: string;
 
   quotes$ = this.priceQuery.priceQueries$;
 
@@ -22,17 +21,15 @@ export class StocksComponent implements OnInit {
     { viewValue: 'Year-to-date', value: 'ytd' },
     { viewValue: 'Six months', value: '6m' },
     { viewValue: 'Three months', value: '3m' },
-    { viewValue: 'One month', value: '1m' }
+    { viewValue: 'One month', value: '1m' },
   ];
 
   constructor(private fb: FormBuilder, private priceQuery: PriceQueryFacade) {
     this.stockPickerForm = fb.group({
       symbol: [null, Validators.required],
-      period: [null, Validators.required]
+      period: [null, Validators.required],
     });
   }
-
-  ngOnInit() {}
 
   fetchQuote() {
     if (this.stockPickerForm.valid) {

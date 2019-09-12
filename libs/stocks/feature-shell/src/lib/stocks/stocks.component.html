@@ -32,4 +32,4 @@
   <button (click)="fetchQuote()" mat-raised-button>Go</button>
 </form>
 
-<coding-challenge-chart [data$]="quotes$"></coding-challenge-chart>
+<coding-challenge-chart [data]="quotes$ | async"></coding-challenge-chart>
