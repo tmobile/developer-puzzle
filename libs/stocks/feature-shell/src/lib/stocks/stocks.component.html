@@ -32,4 +32,9 @@
   <button (click)="fetchQuote()" mat-raised-button>Go</button>
 </form>
 
-<coding-challenge-chart [data]="quotes$ | async"></coding-challenge-chart>
+<coding-challenge-chart
+  [type]="'LineChart'"
+  [title]="'Stock Prices'"
+  [columnNames]="['period', 'close']"
+  [data]="quotes$ | async"
+></coding-challenge-chart>

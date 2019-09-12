@@ -7,9 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ChartComponent {
   @Input() data: (string | number)[][] = [];
-
-  title = '';
-  type = 'LineChart';
-  columnNames: string[] = ['period', 'close'];
-  options: any = { title: `Stock price`, width: '600', height: '400' };
+  @Input() title = '';
+  @Input() type = 'LineChart';
+  @Input() columnNames: string[];
+  @Input() options: any = { width: '600', height: '400' };
 }
