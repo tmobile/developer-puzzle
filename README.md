@@ -68,6 +68,8 @@ Stock API application - May not be required to change since it’s a just a Hell
 Chart data will not get displayed since data are fetched from the async from the stock api., The issue can be resolved couple of different ways. Async operator can be used in the query observable or response data can be subscribed and binded to the component.
 
 > Make a PR to fix at least one of the issues that you identify
+ 
+ Issue is resolved on the master branch of the fork.
 
 ### Task 2
 
