@@ -6,7 +6,9 @@ import { transformPriceQueryResponse } from './price-query-transformer.util';
 export const PRICEQUERY_FEATURE_KEY = 'priceQuery';
 
 export interface PriceQueryState extends EntityState<PriceQuery> {
-  selectedSymbol: string;
+  selectedSymbol: string,
+  loading: boolean,
+  error: Error
 }
 
 export function sortByDateNumeric(a: PriceQuery, b: PriceQuery): number {

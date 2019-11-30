@@ -32,4 +32,5 @@
   <button (click)="fetchQuote()" mat-raised-button>Go</button>
 </form>
 
-<coding-challenge-chart [data$]="quotes$"></coding-challenge-chart>
+
+<coding-challenge-chart *ngIf="stockData?.length > 0" [data]="stockData"></coding-challenge-chart>

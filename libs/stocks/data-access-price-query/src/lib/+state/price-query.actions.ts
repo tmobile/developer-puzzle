@@ -34,9 +34,9 @@ export type PriceQueryAction =
   | PriceQueryFetchError
   | SelectSymbol;
 
-export const fromPriceQueryActions = {
+/* export const fromPriceQueryActions = {
   FetchPriceQuery,
   PriceQueryFetched,
   PriceQueryFetchError,
   SelectSymbol
-};
+}; */
