@@ -38,8 +38,34 @@ A proxy has been set up in `stocks` to proxy calls to `locahost:3333` which is t
 Please provide a short code review of the base `master` branch:
 
 1. What is done well?
+
+The stock application has been created with modularized structure and utilize angular features on the app. The front end (stock) and back end/middle ware apps(stocks-api) are into the repository. As application grows, it can be straight forward to maintain with structure of application.
+
+External Google chart component created as shared library component. The component can be used to display chart when other part of the application requires to display chart using Google plugin.
+
+Ngrx store used to manage state of the application. Stock data price query Module created to have ngrx store information. Types(PriceQuery and PriceQueryResponse) are defined and Transformation utils created to transform response. If there are any model changes are happened and new attribute introduced, can be directly managed at the price query type file.Also, transformation utilize can be utilized only to send required information on the application.
+
+Material - Angular material utilized for the material design for creating UX component
+
 2. What would you change?
+
+StoreDevToolsModule not requires to be used on prod mode.
+
+Transform utils can be modified to send only required information in the application. The application does utilize date and close information from api response May be, If application requires to be extended in the future, then we may require few more information from the application.
+
+Material and other common imports can be moved to separate module in order to manage common imports for the application. For stock application, we can have import dependent material module on the same component. When the application grows, it may requires multiple material module added into the application. It's better to manage dependency on common module.
+
+Add error message for the period required validation.
+
+Chart Component - Line Chart type is added directly on the shared component. Changes may not be required on the application since Line chart utilized on component. If different chart types requires to be utilized on the application, chart information could have been moved to parent component and passed the data to the shared chart component.
+
+Accessibility tags are not added into the applications.
+
+Stock API application - May not be required to change since it’s a just a Hello World route.When it requires to be implement multiple, its better to have separate file for route information and injected as plugin in the application.
+
 3. Are there any code smells or problematic implementations?
+
+Chart data will not get displayed since data are fetched from the async from the stock api., The issue can be resolved couple of different ways. Async operator can be used in the query observable or response data can be subscribed and binded to the component.
 
 > Make a PR to fix at least one of the issues that you identify
 
