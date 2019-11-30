@@ -13,9 +13,6 @@ export class StocksComponent implements OnInit {
   symbol: string;
   period: string;
   stockData: [string, number];
-  
-  /* quotes$ = this.priceQuery.priceQueries$.
-  subscribe(response => (this.stockData = response)); */
 
   timePeriods = [
     { viewValue: 'All available data', value: 'max' },
@@ -36,8 +33,7 @@ export class StocksComponent implements OnInit {
   }
 
   ngOnInit() {
-    /* this.priceQuery.priceQueries$.
-       subscribe(response  => (this.stockData = response));  */
+
   }
 
   fetchQuote() {
