@@ -27,6 +27,57 @@
         {{ timePeriod.viewValue }}
       </mat-option>
     </mat-select>
+
+    <mat-error
+      ><span
+        *ngIf="
+          !stockPickerForm.get('period').valid &&
+          stockPickerForm.get('period').touched
+        "
+        >Please select period</span
+      >
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput  
+      [max]="maxDate"  
+      [matDatepicker]="fromDatepicker" 
+      formControlName="fromDate"
+      (click)="fromDatepicker.open()" 
+      placeholder="Choose From date">
+    <mat-datepicker-toggle matSuffix [for]="fromDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #fromDatepicker></mat-datepicker>
+    <mat-error
+      ><span
+        *ngIf="
+          !stockPickerForm.get('fromDate').valid &&
+          stockPickerForm.get('fromDate').touched
+        "
+        >Please select date</span
+      >
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput 
+        [min]="minDate" 
+        [max]="maxDate" 
+        formControlName="toDate"
+        [matDatepicker]="toDatepicker"
+        (click)="toDatepicker.open()" 
+         placeholder="Choose To date">
+    <mat-datepicker-toggle matSuffix [for]="toDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #toDatepicker></mat-datepicker>
+    <mat-error
+      ><span
+        *ngIf="
+          !stockPickerForm.get('toDate').valid &&
+          stockPickerForm.get('toDate').touched
+        "
+        >Please select date</span
+      >
+    </mat-error>
   </mat-form-field>
 
   <button (click)="fetchQuote()" mat-raised-button>Go</button>
