@@ -33,10 +33,3 @@ export type PriceQueryAction =
   | PriceQueryFetched
   | PriceQueryFetchError
   | SelectSymbol;
-
-/* export const fromPriceQueryActions = {
-  FetchPriceQuery,
-  PriceQueryFetched,
-  PriceQueryFetchError,
-  SelectSymbol
-}; */
