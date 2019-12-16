@@ -3,15 +3,20 @@
 ### Important! Read this First !
 
 Do **not** submit a pull request to this repository.  You PR wil be rejected and your submission ignored.
+To be safe **do not Fork** this repository, if you do you will be tempted to create a PR.
 
 To _properly_ submit a coding challenge you must:
 
-1. fork this repository
-2. make the necessary changes
-3. push changes to your forked origin 
-4. send address of your fork to t-mobile.
+1. Create a blank (empty) repo in the public git service of your choice ( github, gitlab, bitbucket )
+2. Clone this repo to your local workstation
+3. Reset the remote origin to point to your newly created empty repo
+4. Push the master branch up to your repo
 
-We will review your fork online before and during your interview.
+5. make necessary changes
+6. push changes to your origin
+7. send address of your copy to t-mobile.
+
+We will review your copy online before and during your interview.
 
 
 # Stocks coding challenge
