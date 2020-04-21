@@ -1,8 +1,8 @@
 # T-Mobile Coding Challenge
 
-### Important! Read this First !
+### Important! Read this First!
 
-Do **not** submit a pull request to this repository.  You PR wil be rejected and your submission ignored.
+Do **not** submit a pull request to this repository.  Your PR wil be rejected and your submission ignored.
 To be safe **do not Fork** this repository, if you do you will be tempted to create a PR.
 
 To _properly_ submit a coding challenge you must:
