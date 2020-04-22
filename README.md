@@ -2,19 +2,19 @@
 
 ### Important! Read this First!
 
-Do **not** submit a pull request to this repository.  Your PR wil be rejected and your submission ignored.
-To be safe **do not Fork** this repository, if you do you will be tempted to create a PR.
+Do **not** submit a pull request to this repository.  Your PR will be rejected and your submission ignored.
+To be safe **do not fork** this repository, if you do you will be tempted to create a PR.
 
 To _properly_ submit a coding challenge you must:
 
-1. Create a blank (empty) repo in the public git service of your choice ( github, gitlab, bitbucket )
+1. Create a blank (empty) repo in the public git service of your choice (GitHub, GitLab, Bitbucket)
 2. Clone this repo to your local workstation
 3. Reset the remote origin to point to your newly created empty repo
 4. Push the master branch up to your repo
 
-5. make necessary changes
-6. push changes to your origin
-7. send address of your copy to t-mobile.
+5. Make necessary changes
+6. Push changes to your origin
+7. Send address of your copy to T-Mobile
 
 We will review your copy online before and during your interview.
 
@@ -51,9 +51,9 @@ Please provide a short code review of the base `master` branch:
 
 #### Task 1-B
 
-[Accessability](https://www.w3.org/WAI/GL/WCAG20/) is an important feature of all public facing websites.  
+[Accessibility](https://www.w3.org/WAI/GL/WCAG20/) is an important feature of all public facing websites.  
 
-> Make a PR to add accessability features to the web application
+> Make a PR to add accessibility features to the web application
 
 
 ### Task 2
